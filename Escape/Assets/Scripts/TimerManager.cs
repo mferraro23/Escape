@@ -23,8 +23,8 @@ public class TimerManager : MonoBehaviour
         TimerText.text = string.Format("{0,00} seconds", seconds);
         if (Timer.TimeLeft <= 0 && Timer.TimerOn == true)
         {
-            Debug.Log("You Lost!");
             Timer.TimerOn = false;
+            SceneManager.LoadScene("Lost");
         }
     }
 }

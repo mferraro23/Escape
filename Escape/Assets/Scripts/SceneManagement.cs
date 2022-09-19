@@ -5,11 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public string switchScene = "Scene_03";
     void OnTriggerEnter(Collider ChangeScene)
     {
         if (ChangeScene.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Scene_03");
+            SceneManager.LoadScene(switchScene);
         }
+    }
+
+    public void switchToMenu()
+    {
+        SceneManager.LoadScene(switchScene);
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(switchScene);
     }
 }

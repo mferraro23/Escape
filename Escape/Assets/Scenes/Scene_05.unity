@@ -3454,6 +3454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d55369a3e659940b98969b57f08d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchScene: Win
 --- !u!1001 &4390551690383832158
 PrefabInstance:
   m_ObjectHideFlags: 0
