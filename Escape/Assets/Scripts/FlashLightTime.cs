@@ -10,7 +10,7 @@ public class FlashLightTime : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
-        TurnFlashlightOn.TimeLeft = 8.0f;
+        TurnFlashlightOn.TimeLeft = 80.0f;
         FlashLightBattery.text = string.Format("Power Remaining: 80");
     }
 
