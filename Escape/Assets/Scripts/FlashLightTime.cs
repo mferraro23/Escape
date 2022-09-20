@@ -2,14 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FlashLightTime : MonoBehaviour
 {
     public TMP_Text FlashLightBattery;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "Menu" || scene.name != "Win" || scene.name != "Lost")
+        {
+            DontDestroyOnLoad(gameObject);
+            Cursor.visible = false;
+        }
+        else if (scene.name == "Menu" || scene.name == "Win" || scene.name == "Lost")
+        {
+            Debug.Log(scene.name);
+            Cursor.visible = true;
+            Destroy(gameObject);
+        }
+        
         TurnFlashlightOn.TimeLeft = 80.0f;
         FlashLightBattery.text = string.Format("Power Remaining: 80");
     }
