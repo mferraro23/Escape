@@ -19,6 +19,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
+            [HideInInspector] public static bool isMovingFoward = false;
+            [HideInInspector] public static bool isMovingBackward = false;
+            [HideInInspector] public static bool isMovingStrafe = false;
 
 #if !MOBILE_INPUT
             private bool m_Running;
@@ -26,23 +29,35 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
-	            if (input == Vector2.zero) return;
+	            if (input == Vector2.zero)
+                {
+                    isMovingBackward = false;
+                    isMovingFoward = false;
+                    isMovingStrafe = false;
+                }
+                    
 				if (input.x > 0 || input.x < 0)
 				{
 					//strafe
 					CurrentTargetSpeed = StrafeSpeed;
+                    isMovingStrafe = true;
 				}
+                
 				if (input.y < 0)
 				{
 					//backwards
 					CurrentTargetSpeed = BackwardSpeed;
+                    isMovingBackward = true;
 				}
+                
 				if (input.y > 0)
 				{
 					//forwards
 					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
 					CurrentTargetSpeed = ForwardSpeed;
+                    isMovingFoward = true;
 				}
+                
 #if !MOBILE_INPUT
 	            if (Input.GetKey(RunKey))
 	            {
