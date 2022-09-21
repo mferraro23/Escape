@@ -14,7 +14,7 @@ public class PlayFootsteps : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingStrafe == true || UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingFoward == true || UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingBackward == true)
+        if (UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingStrafe == true || UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingForward == true || UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController.MovementSettings.isMovingBackward == true)
         {
             if (!isPlaying)
             {

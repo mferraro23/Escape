@@ -19,9 +19,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float JumpForce = 30f;
             public AnimationCurve SlopeCurveModifier = new AnimationCurve(new Keyframe(-90.0f, 1.0f), new Keyframe(0.0f, 1.0f), new Keyframe(90.0f, 0.0f));
             [HideInInspector] public float CurrentTargetSpeed = 8f;
-            [HideInInspector] public static bool isMovingFoward = false;
             [HideInInspector] public static bool isMovingBackward = false;
             [HideInInspector] public static bool isMovingStrafe = false;
+            [HideInInspector] public static bool isMovingForward = false;
+
+
 
 #if !MOBILE_INPUT
             private bool m_Running;
@@ -31,33 +33,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
 	            if (input == Vector2.zero)
                 {
-                    isMovingBackward = false;
-                    isMovingFoward = false;
                     isMovingStrafe = false;
+                    isMovingBackward = false;
+                    isMovingForward = false;
                 }
-                    
+                
 				if (input.x > 0 || input.x < 0)
 				{
 					//strafe
 					CurrentTargetSpeed = StrafeSpeed;
                     isMovingStrafe = true;
 				}
-                
 				if (input.y < 0)
 				{
 					//backwards
 					CurrentTargetSpeed = BackwardSpeed;
                     isMovingBackward = true;
 				}
-                
 				if (input.y > 0)
 				{
 					//forwards
 					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
 					CurrentTargetSpeed = ForwardSpeed;
-                    isMovingFoward = true;
+                    isMovingForward = true;
 				}
-                
 #if !MOBILE_INPUT
 	            if (Input.GetKey(RunKey))
 	            {
@@ -87,8 +86,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             public float stickToGroundHelperDistance = 0.5f; // stops the character
             public float slowDownRate = 20f; // rate at which the controller comes to a stop when there is no input
             public bool airControl; // can the user control the direction that is being moved in the air
-            [Tooltip("set it to 0.1 or more if you get stuck in wall")]
-            public float shellOffset; //reduce the radius by that ratio to avoid getting stuck in wall (a value of 0.1f is nice)
         }
 
 
@@ -212,9 +209,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void StickToGroundHelper()
         {
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, Vector3.down, out hitInfo,
                                    ((m_Capsule.height/2f) - m_Capsule.radius) +
-                                   advancedSettings.stickToGroundHelperDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+                                   advancedSettings.stickToGroundHelperDistance))
             {
                 if (Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
                 {
@@ -255,13 +252,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+
         /// sphere cast down just beyond the bottom of the capsule to see if the capsule is colliding round the bottom
         private void GroundCheck()
         {
             m_PreviouslyGrounded = m_IsGrounded;
             RaycastHit hitInfo;
-            if (Physics.SphereCast(transform.position, m_Capsule.radius * (1.0f - advancedSettings.shellOffset), Vector3.down, out hitInfo,
-                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+            if (Physics.SphereCast(transform.position, m_Capsule.radius, Vector3.down, out hitInfo,
+                                   ((m_Capsule.height/2f) - m_Capsule.radius) + advancedSettings.groundCheckDistance))
             {
                 m_IsGrounded = true;
                 m_GroundContactNormal = hitInfo.normal;
