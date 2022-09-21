@@ -18,7 +18,6 @@ public class FlashLightTime : MonoBehaviour
         }
         else if (scene.name == "Menu" || scene.name == "Win" || scene.name == "Lost")
         {
-            Debug.Log(scene.name);
             Cursor.visible = true;
             Destroy(gameObject);
         }
@@ -30,11 +29,13 @@ public class FlashLightTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float seconds = Mathf.FloorToInt(TurnFlashlightOn.TimeLeft);
+        FlashLightBattery.text = string.Format("Power Remaining: {0,00}", seconds);
+
         if (TurnFlashlightOn.isOn == true)
         {
             TurnFlashlightOn.TimeLeft -= Time.deltaTime;
-            float seconds = Mathf.FloorToInt(TurnFlashlightOn.TimeLeft);
-            FlashLightBattery.text = string.Format("Power Remaining: {0,00}", seconds);
+            
 
             if(seconds <= 0)
             {

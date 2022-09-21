@@ -21,7 +21,6 @@ public class TimerManager : MonoBehaviour
             Destroy(gameObject);
         }
         
-        
         Timer.TimerOn = true;
         Timer.TimeLeft = 120f;
     }
@@ -33,7 +32,7 @@ public class TimerManager : MonoBehaviour
         {
             Timer.TimeLeft -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(Timer.TimeLeft);
-            TimerText.text = string.Format("{0,00} seconds", seconds);
+            TimerText.text = string.Format("{0,00} seconds reamin to escape...", seconds);
             if (Timer.TimeLeft <= 0)
             {
                 
