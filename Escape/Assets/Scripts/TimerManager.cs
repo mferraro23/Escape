@@ -32,7 +32,7 @@ public class TimerManager : MonoBehaviour
         {
             Timer.TimeLeft -= Time.deltaTime;
             float seconds = Mathf.FloorToInt(Timer.TimeLeft);
-            TimerText.text = string.Format("{0,00} seconds reamin to escape...", seconds);
+            TimerText.text = string.Format("{0,00} seconds remain to escape...", seconds);
             if (Timer.TimeLeft <= 0)
             {
                 

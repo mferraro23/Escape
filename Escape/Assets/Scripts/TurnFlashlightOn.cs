@@ -9,12 +9,15 @@ public class TurnFlashlightOn : MonoBehaviour
     public static Light myLight;
     int flag;
     public static float TimeLeft;
+    public static GameObject doll;
+    int dollCount;
 
     // Start is called before the first frame update
     void Start()
     {
         myLight = GetComponent<Light>();
         flag = 1;
+        dollCount = 0;
         isOn = false;
         canTurnOn = true;
     }
@@ -46,6 +49,11 @@ public class TurnFlashlightOn : MonoBehaviour
                 flag = -1;
                 isOn = false;
             }
+        }
+
+        if(canTurnOn == false && dollCount == 0)
+        {
+            Instantiate(doll);
         }
     }
 }
