@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenue;
+    int flag = 0;
    
    public void Resume()
    {
         pauseMenue.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
    }
     public void Menu()
@@ -23,10 +25,17 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && flag == 0)
         {
             pauseMenue.SetActive(true);
             Time.timeScale = 0f;
+            flag = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && flag == 1)
+        {
+            pauseMenue.SetActive(false);
+            Time.timeScale = 1f;
+            flag = 0;
         }
     }
 }

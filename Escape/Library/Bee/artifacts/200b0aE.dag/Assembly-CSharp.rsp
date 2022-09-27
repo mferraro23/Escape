@@ -374,6 +374,8 @@
 "Assets/Scripts/DestroyAfterAnimate.cs"
 "Assets/Scripts/DontDestroy.cs"
 "Assets/Scripts/FlashLightTime.cs"
+"Assets/Scripts/FullScreenToggle.cs"
+"Assets/Scripts/HideMouse.cs"
 "Assets/Scripts/PickUpItem.cs"
 "Assets/Scripts/PlayFootsteps.cs"
 "Assets/Scripts/QuitGame.cs"

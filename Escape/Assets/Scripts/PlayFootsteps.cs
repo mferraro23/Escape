@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayFootsteps : MonoBehaviour
 {
-    public AudioSource audio;
+    [SerializeField] private AudioSource source;
     bool isPlaying;
     void Start()
     {
         isPlaying = false;
-        audio = GetComponent<AudioSource>();
+        source = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -19,7 +19,7 @@ public class PlayFootsteps : MonoBehaviour
             if (!isPlaying)
             {
                 //Debug.Log("Playing");
-                audio.Play();
+                source.Play();
                 isPlaying = true;
             }
 
@@ -27,7 +27,7 @@ public class PlayFootsteps : MonoBehaviour
         else
         {
             //Debug.Log("NotPlaying");
-            audio.Stop();
+            source.Stop();
             isPlaying = false;
         }
     }

@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429272080961602918, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.93
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 429272080961602918, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
       propertyPath: m_LocalPosition.z
@@ -501,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2040,6 +2040,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   switchScene: Scene_05
+--- !u!82 &1040598694
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040598688}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1a96b3165063507408a9ea61ee6b6f90, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 2
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1140771931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 429272080961602918, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.93
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 429272080961602918, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3314,7 +3410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -20
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3946,7 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ea340b943a54241a1a46445e1bc49b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 2026142536}
+  source: {fileID: 0}
 --- !u!82 &2026142538
 AudioSource:
   m_ObjectHideFlags: 0
