@@ -9,15 +9,17 @@ public class TurnFlashlightOn : MonoBehaviour
     public static Light myLight;
     int flag;
     public static float TimeLeft;
-    public static GameObject doll;
-    int dollCount;
+
+    public AudioClip on;
+    public AudioClip off;
+    public AudioClip cant;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         myLight = GetComponent<Light>();
         flag = 1;
-        dollCount = 0;
         isOn = false;
         canTurnOn = true;
     }
@@ -27,6 +29,7 @@ public class TurnFlashlightOn : MonoBehaviour
     {
         if (flag == 1 && Input.GetKeyDown(KeyCode.R) && canTurnOn == true)
         {
+            source.PlayOneShot(on);
             myLight.range = 8;
             myLight.intensity = 17;
             flag = 0;
@@ -35,6 +38,7 @@ public class TurnFlashlightOn : MonoBehaviour
         }
         else if (flag == 0 && Input.GetKeyDown(KeyCode.R) && canTurnOn == true)
         {
+            source.PlayOneShot(off);
             myLight.range = 5;
             myLight.intensity = 10;
             flag = 1;
@@ -44,16 +48,12 @@ public class TurnFlashlightOn : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.R) && canTurnOn == false)
             {
+                source.PlayOneShot(cant);
                 myLight.range = 5;
                 myLight.intensity = 10;
                 flag = -1;
                 isOn = false;
             }
-        }
-
-        if(canTurnOn == false && dollCount == 0)
-        {
-            Instantiate(doll);
         }
     }
 }

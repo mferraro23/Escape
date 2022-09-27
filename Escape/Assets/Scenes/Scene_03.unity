@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1.33
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -283,6 +283,14 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1786119812}
+    - target: {fileID: 429272081149225006, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
+      propertyPath: Batteries
+      value: 
+      objectReference: {fileID: 60525437114033783, guid: ee007f03474c7604bbd6edd51ebcc727, type: 3}
+    - target: {fileID: 429272081149225006, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
+      propertyPath: TimeRemaining
+      value: 
+      objectReference: {fileID: 5970982206063122846, guid: b7e8ae15063573c4cbd8b9e220c625a8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
 --- !u!4 &131687604 stripped
@@ -475,6 +483,14 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1786119812}
+    - target: {fileID: 772215383, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
+      propertyPath: Batteries
+      value: 
+      objectReference: {fileID: 60525437114033783, guid: ee007f03474c7604bbd6edd51ebcc727, type: 3}
+    - target: {fileID: 772215383, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
+      propertyPath: TimeRemaining
+      value: 
+      objectReference: {fileID: 5970982206063122846, guid: b7e8ae15063573c4cbd8b9e220c625a8, type: 3}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2378,6 +2394,14 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1786119812}
+    - target: {fileID: 429272081149225006, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
+      propertyPath: Batteries
+      value: 
+      objectReference: {fileID: 60525437114033783, guid: ee007f03474c7604bbd6edd51ebcc727, type: 3}
+    - target: {fileID: 429272081149225006, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
+      propertyPath: TimeRemaining
+      value: 
+      objectReference: {fileID: 5970982206063122846, guid: b7e8ae15063573c4cbd8b9e220c625a8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24edca137dcacef479e46bc6f0029287, type: 3}
 --- !u!4 &1399495834 stripped
@@ -3272,6 +3296,14 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 1786119812}
+    - target: {fileID: 772215383, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
+      propertyPath: Batteries
+      value: 
+      objectReference: {fileID: 60525437114033783, guid: ee007f03474c7604bbd6edd51ebcc727, type: 3}
+    - target: {fileID: 772215383, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
+      propertyPath: TimeRemaining
+      value: 
+      objectReference: {fileID: 5970982206063122846, guid: b7e8ae15063573c4cbd8b9e220c625a8, type: 3}
     - target: {fileID: 4222020067943239780, guid: c74dac7827d049b40adc0b39179905cd, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3797,6 +3829,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c3b03868a25c744888154d617d2eb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  on: {fileID: 8300000, guid: 57271f17989d12342a9f2c2fb86e4e38, type: 3}
+  off: {fileID: 8300000, guid: 78f2e192170fd5b48913ec2849d25b77, type: 3}
+  cant: {fileID: 8300000, guid: fe897746f5a13ff4796716fb23eb1c9c, type: 3}
+  source: {fileID: 2026142538}
 --- !u!1 &2026142535 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4390551690275011134, guid: 4b9072eba920fca40b220b423bec80b1, type: 3}
@@ -3911,6 +3947,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 2026142536}
+--- !u!82 &2026142538
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026142533}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2093808456
 GameObject:
   m_ObjectHideFlags: 0

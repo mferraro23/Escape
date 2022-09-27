@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class FlashLightTime : MonoBehaviour
 {
     public TMP_Text FlashLightBattery;
+
+    public AudioClip batteryDead;
+    public AudioSource source;
     
     void Start()
     {
@@ -39,6 +42,7 @@ public class FlashLightTime : MonoBehaviour
 
             if(seconds <= 0)
             {
+                source.PlayOneShot(batteryDead);
                 TurnFlashlightOn.canTurnOn = false;
                 TurnFlashlightOn.isOn = false;
                 TurnFlashlightOn.myLight.range = 5;

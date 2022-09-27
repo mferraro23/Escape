@@ -27,7 +27,9 @@ public class SceneManagement : MonoBehaviour
         {
             if(switchScene == "Win")
             {
+
                 Destroy(GameObject.Find("TimerManager"));
+                GameObject.Find("PlayBackgroundMusic").GetComponent<AudioSource>().Pause();
             }
             SceneManager.LoadScene(switchScene);
         }

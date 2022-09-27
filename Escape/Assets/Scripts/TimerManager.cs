@@ -39,6 +39,7 @@ public class TimerManager : MonoBehaviour
                 Timer.TimerOn = false;
                 TimerText.text = "0 seconds";
                 Destroy(gameObject);
+                GameObject.Find("PlayBackgroundMusic").GetComponent<AudioSource>().Pause();
                 SceneManager.LoadScene("Lost");
             }
         }
