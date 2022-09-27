@@ -34,7 +34,7 @@ public class PickUpItem : MonoBehaviour
                 Instantiate(TimeRemaining, other.transform, true);
                 AudioSource.PlayClipAtPoint(clip, transform.position);
                 Destroy(gameObject);
-                Timer.TimeLeft += 5.0f;
+                Timer.TimeLeft += 20.0f;
             }
 
         }

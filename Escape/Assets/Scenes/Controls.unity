@@ -547,6 +547,13 @@ PrefabInstance:
       value: 244
       objectReference: {fileID: 0}
     - target: {fileID: 834121523884957405, guid: afc0d09f8b6044a448009fc1804c9d98, type: 3}
+      propertyPath: m_text
+      value: "Escape! \n-There are three rooms, to get to the next room you need
+        to walk through the teleporter in the maze somewhere.\n-You can Pick up flashlight
+        batteries on the ground to increase your flashlight life by 5.\n-You can
+        pick up clocks on the ground to increase your time to escape by 20 seconds."
+      objectReference: {fileID: 0}
+    - target: {fileID: 834121523884957405, guid: afc0d09f8b6044a448009fc1804c9d98, type: 3}
       propertyPath: m_margin.w
       value: -264.28622
       objectReference: {fileID: 0}
